@@ -56,7 +56,6 @@ The project features code-level examples for the following items:
 + XIB working with Storyboard
 + XML (get data from XML)
 + XML (get data from AppStore)
-+ iAdFramework (banner samples for your app)
 + iCloud
 
 
