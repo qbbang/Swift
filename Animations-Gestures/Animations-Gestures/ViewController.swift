@@ -100,12 +100,14 @@ class ViewController: UIViewController {
 }
 
 @objc func longPress(_ send: UIGestureRecognizer) {
-    UIView.animate(withDuration: 0.33, animations: { () -> Void in
-        self.dieCenter = self.penguinView.center
-        self.penguinView.center = CGPoint(x: self.penguinView.center.x, y: self.view.frame.size.height)
-    }, completion: { (finished: Bool) -> Void in
-         self.longPressBack()
-    })
+    if(send.state == .began) {
+        UIView.animate(withDuration: 0.33, animations: { () -> Void in
+            self.dieCenter = self.penguinView.center
+            self.penguinView.center = CGPoint(x: self.penguinView.center.x, y: self.view.frame.size.height)
+        }, completion: { (finished: Bool) -> Void in
+            self.longPressBack()
+        })
+    }
 }
 
 @objc func longPressBack() {
